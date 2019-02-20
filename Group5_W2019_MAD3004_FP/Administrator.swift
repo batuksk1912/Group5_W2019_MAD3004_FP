@@ -5,14 +5,14 @@
 
 import Foundation
 
-class Administrator {
+class Administrator: User {
 
     var adminName: String
     var email: String
 
-    init(adminName: String, email: String) {
-        //super.init(userId: String, password: String, loginStatus: String)
+    init(userId: String?, password: String?, loginStatus: String?, adminName: String, email: String) {
         self.adminName = adminName
         self.email = email
+        super.init(userId: userId, password: password, loginStatus: loginStatus)
     }
 }
