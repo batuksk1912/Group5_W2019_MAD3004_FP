@@ -5,7 +5,7 @@
 
 import Foundation
 
-class Customer: User {
+class Customer {
     var customerName: String
     var address: String
     var email: String
@@ -14,7 +14,7 @@ class Customer: User {
     var accountBalance: Float
 
     init(userId: String, password: String, loginStatus: String, registerDate: Date, customerName: String, address: String, email: String, creditCardInfo: String, shippingInfo: String, accountBalance: Float) {
-        super.init(userId: userId, password: password, loginStatus: loginStatus, registerDate: registerDate)
+        //super.init(userId: userId, password: password, loginStatus: loginStatus)
         self.customerName = customerName
         self.address = address
         self.email = email
@@ -23,3 +23,4 @@ class Customer: User {
         self.accountBalance = accountBalance
     }
 }
+

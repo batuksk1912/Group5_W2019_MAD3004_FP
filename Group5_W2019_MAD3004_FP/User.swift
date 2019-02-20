@@ -6,17 +6,13 @@
 import Foundation
 
 class User {
-    var userId: String
-    var password: String
-    var loginStatus: String
-    var registerDate: Date
+    private var userId: String?
+    private var password: String?
+    private var loginStatus: String?
 
-    init(userId: String, password: String, loginStatus: String, registerDate: Date) {
+    init(userId: String?, password: String?, loginStatus: String?) {
         self.userId = userId
         self.password = password
         self.loginStatus = loginStatus
-        self.registerDate = registerDate
     }
-
-
 }

@@ -5,13 +5,13 @@
 
 import Foundation
 
-class Administrator: User {
+class Administrator {
 
     var adminName: String
     var email: String
 
     init(adminName: String, email: String) {
-        super.init(userId: <#T##String##Swift.String#>, password: <#T##String##Swift.String#>, loginStatus: <#T##String##Swift.String#>, registerDate: <#T##Date##Foundation.Date#>)
+        //super.init(userId: String, password: String, loginStatus: String)
         self.adminName = adminName
         self.email = email
     }
