@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		04C88856221CDFCF005A8CD5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C88855221CDFCF005A8CD5 /* main.swift */; };
+		04C88863221CDFFE005A8CD5 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8885C221CDFFD005A8CD5 /* Order.swift */; };
+		04C88864221CDFFE005A8CD5 /* Administrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8885D221CDFFD005A8CD5 /* Administrator.swift */; };
+		04C88865221CDFFE005A8CD5 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8885E221CDFFD005A8CD5 /* ShoppingCart.swift */; };
+		04C88866221CDFFE005A8CD5 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8885F221CDFFD005A8CD5 /* Customer.swift */; };
+		04C88867221CDFFE005A8CD5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C88860221CDFFD005A8CD5 /* User.swift */; };
+		04C88868221CDFFE005A8CD5 /* ShippingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C88861221CDFFD005A8CD5 /* ShippingInfo.swift */; };
+		04C88869221CDFFE005A8CD5 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C88862221CDFFE005A8CD5 /* OrderDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +32,13 @@
 /* Begin PBXFileReference section */
 		04C88852221CDFCF005A8CD5 /* Group5_W2019_MAD3004_FP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Group5_W2019_MAD3004_FP; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C88855221CDFCF005A8CD5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		04C8885C221CDFFD005A8CD5 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		04C8885D221CDFFD005A8CD5 /* Administrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Administrator.swift; sourceTree = "<group>"; };
+		04C8885E221CDFFD005A8CD5 /* ShoppingCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
+		04C8885F221CDFFD005A8CD5 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		04C88860221CDFFD005A8CD5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		04C88861221CDFFD005A8CD5 /* ShippingInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingInfo.swift; sourceTree = "<group>"; };
+		04C88862221CDFFE005A8CD5 /* OrderDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,13 @@
 			isa = PBXGroup;
 			children = (
 				04C88855221CDFCF005A8CD5 /* main.swift */,
+				04C8885D221CDFFD005A8CD5 /* Administrator.swift */,
+				04C8885F221CDFFD005A8CD5 /* Customer.swift */,
+				04C8885C221CDFFD005A8CD5 /* Order.swift */,
+				04C88862221CDFFE005A8CD5 /* OrderDetails.swift */,
+				04C88861221CDFFD005A8CD5 /* ShippingInfo.swift */,
+				04C8885E221CDFFD005A8CD5 /* ShoppingCart.swift */,
+				04C88860221CDFFD005A8CD5 /* User.swift */,
 			);
 			path = Group5_W2019_MAD3004_FP;
 			sourceTree = "<group>";
@@ -119,7 +140,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C88864221CDFFE005A8CD5 /* Administrator.swift in Sources */,
+				04C88868221CDFFE005A8CD5 /* ShippingInfo.swift in Sources */,
+				04C88866221CDFFE005A8CD5 /* Customer.swift in Sources */,
+				04C88867221CDFFE005A8CD5 /* User.swift in Sources */,
+				04C88863221CDFFE005A8CD5 /* Order.swift in Sources */,
 				04C88856221CDFCF005A8CD5 /* main.swift in Sources */,
+				04C88865221CDFFE005A8CD5 /* ShoppingCart.swift in Sources */,
+				04C88869221CDFFE005A8CD5 /* OrderDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
