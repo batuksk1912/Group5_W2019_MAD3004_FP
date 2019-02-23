@@ -5,16 +5,22 @@
 
 import Foundation
 
-class ShippingInfo {
-    var shippingId: Int
-    var shippingType: String
+class ShippingInfo : IDisplay {
+    
+    
+    var shippingId: Int?
+    var shippingType: String?
     var shippingCost: Float
-    var shippingRegionId: Int
+    var shippingRegionId: Int?
 
     init(shippingId: Int, shippingType: String, shippingCost: Float, shippingRegionId: Int) {
         self.shippingId = shippingId
         self.shippingType = shippingType
         self.shippingCost = shippingCost
         self.shippingRegionId = shippingRegionId
+    }
+    
+    func display() -> String {
+        return "\nShippin Id is : " + String(self.shippingId!) + "\nShipping Type is : " + self.shippingType! + "\nShipping Cost is : " + String(self.shippingCost.currency()) + "\nShipping Region Id is : " + String(self.shippingRegionId!)
     }
 }
