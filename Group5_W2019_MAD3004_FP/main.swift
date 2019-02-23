@@ -8,6 +8,6 @@
 
 import Foundation
 
-print("Hello, World!")
-print("Xcode sucks !!")
+let user1 = User(userId: "1", password: "34", loginStatus: "true")
 
+print(user1.display())

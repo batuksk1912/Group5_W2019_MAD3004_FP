@@ -5,14 +5,22 @@
 
 import Foundation
 
-class User {
+class User : IDisplay {
     private var userId: String?
     private var password: String?
     private var loginStatus: String?
-
-    init(userId: String?, password: String?, loginStatus: String?) {
+    
+    init(userId: String, password: String, loginStatus: String) {
         self.userId = userId
         self.password = password
         self.loginStatus = loginStatus
+    }
+    
+    func display() -> String {
+        return self.userId! + self.password! + self.loginStatus!
+    }
+    
+    func verifyLogin() -> Bool {
+        return true
     }
 }

@@ -7,12 +7,20 @@ import Foundation
 
 class Administrator: User {
 
-    var adminName: String
-    var email: String
+    var adminName: String?
+    var email: String?
 
-    init(userId: String?, password: String?, loginStatus: String?, adminName: String, email: String) {
+    init(userId: String, password: String, loginStatus: String, adminName: String, email: String) {
+        super.init(userId: userId, password: password, loginStatus: loginStatus)
         self.adminName = adminName
         self.email = email
-        super.init(userId: userId, password: password, loginStatus: loginStatus)
+    }
+    
+    func updateCatalog() -> Bool {
+        return true
+    }
+    
+    override func display() -> String {
+        return "null"
     }
 }
