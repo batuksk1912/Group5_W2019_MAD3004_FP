@@ -19,8 +19,9 @@ class ShoppingCart :IDisplay {
         self.quantity = quantity
         self.dateAdded = dateAdded
     }
+    
     func display() -> String {
-        let dateDisplay1 = self.dateAdded.getForamttedDate()
+        let dateDisplay1 = self.dateAdded.getFormattedDate()
         return "Cart Id is : " + String(self.cartId!) + "\nProduct Id is : " + String(self.productId!) + "\nQuantity is : " + String(self.quantity.unit()) + "\nDate Added is : " + dateDisplay1
     }
 }

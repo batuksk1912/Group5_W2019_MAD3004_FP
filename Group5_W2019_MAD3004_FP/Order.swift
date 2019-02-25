@@ -7,7 +7,6 @@ import Foundation
 
 class Order : IDisplay {
     
-    
     var orderId: Int?
     var dateCreated:Date = Date()
     var dateShipped:Date = Date()
@@ -27,7 +26,7 @@ class Order : IDisplay {
     }
     
     func display() -> String {
-        let dateDisplay = "\nDate Created : " + self.dateCreated.getForamttedDate() + "\nDate Shipped : " + self.dateShipped.getForamttedDate()
+        let dateDisplay = "\nDate Created : " + self.dateCreated.getFormattedDate() + "\nDate Shipped : " + self.dateShipped.getFormattedDate()
        
         return  "OrderId is : " + String(self.orderId!) + dateDisplay + "\nCustomer Name is : " + self.CustomerName! + "\nCustomerId is : " + String(self.CustomerId!) + "\nStatus is : " + self.status! + "\nShippingId is : " + String(self.shippingId!)
     }

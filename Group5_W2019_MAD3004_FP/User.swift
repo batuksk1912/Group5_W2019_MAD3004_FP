@@ -10,7 +10,6 @@ class User : IDisplay {
     private var password: String?
     private var loginStatus: String?
     
-    private static var dictionaryUsers=[String:User]()
 
     init(userId: String, password: String, loginStatus: String) {
         self.userId = userId
@@ -24,13 +23,9 @@ class User : IDisplay {
     
     func verifyLogin() -> Bool {
         return true
-        return self.userId! + " " + self.password! + " " +  self.loginStatus!
     }
     
-    static func addUser(user: User)
-    {
-        dictionaryUsers.updateValue(user, forKey: user.userId!)
-    }
+    
 
     func verifyLogin(id: String, password: String) -> Bool {
         if (self.userId == id && self.password == password) {

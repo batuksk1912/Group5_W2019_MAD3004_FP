@@ -13,6 +13,8 @@ class Customer : User {
     private var creditCardInfo: String?
     private var shippingInfo: String?
     
+    private static var dictionaryUsers=[String:User]()
+    
     init(userId: String, password: String, loginStatus: String, customerName: String, address: String, email: String, creditCardInfo: String, shippingInfo: String) {
         super.init(userId: userId, password: password, loginStatus: loginStatus)
         self.customerName = customerName
@@ -21,10 +23,10 @@ class Customer : User {
         self.creditCardInfo = creditCardInfo
         self.shippingInfo = shippingInfo
     }
-    
-
-    func register(userId: String, password: String, customerName: String, address: String, email: String, creditCardInfo: String, shippingInfo: String) {
-        //Fill It Up
+        
+    static func register(user: User)
+    {
+        dictionaryUsers.updateValue(user, forKey: user.getUserId())
     }
     
     override func display() -> String {
