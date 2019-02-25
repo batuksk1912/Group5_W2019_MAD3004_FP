@@ -30,7 +30,7 @@ extension Int
 
 extension Date
 {
-    public func getForamttedDate() -> String
+    public func getFormattedDate() -> String
     {
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "EEEE, dd MMMM, yyyy"
@@ -38,3 +38,5 @@ extension Date
         return formattedDate
     }
 }
+
+
