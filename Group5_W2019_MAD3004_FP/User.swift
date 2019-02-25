@@ -19,6 +19,11 @@ class User : IDisplay {
     }
     
     func display() -> String {
+        return "User id is : " + self.userId! + "\n" + "User Password is : " + self.password! + "\n" + "Login Status is : " + self.loginStatus! + "\n" 
+    }
+    
+    func verifyLogin() -> Bool {
+        return true
         return self.userId! + " " + self.password! + " " +  self.loginStatus!
     }
     

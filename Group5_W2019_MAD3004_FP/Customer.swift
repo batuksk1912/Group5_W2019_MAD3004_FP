@@ -28,7 +28,7 @@ class Customer : User {
     }
     
     override func display() -> String {
-        return "null"
+        return super.display() + "Customer Name is : " + self.customerName! + "\nCustomer Address is : " + self.address! + "\nCustomer Email is : " + self.email! + "\nCustomer Credit Card Info is : " + self.creditCardInfo! + "\nCustomer Shipping Info is : " + self.shippingInfo!
     }
 
 }

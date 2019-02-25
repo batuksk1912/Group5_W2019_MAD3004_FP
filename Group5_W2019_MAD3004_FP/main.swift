@@ -10,19 +10,24 @@ import Foundation
 
 let user1 = User(userId: "1", password: "34", loginStatus: "true")
 
-let customer1 = Customer(userId: "1", password: "38", loginStatus: "defualt", customerName: "Batu", address: "137 Woody Vine", email: "bk@gmail.com", creditCardInfo: "4543", shippingInfo: "yes")
+let admin = Administrator(userId: "2", password: "345", loginStatus: "true", adminName: "gury", email: "gmail")
+let cstmr = Customer(userId: "3", password: "897", loginStatus: "true", customerName: "khushi", address: "kkr", email: "yahoo", creditCardInfo: "12dfs", shippingInfo: "toronto")
 
-User.addUser(user: customer1)
+let order1 = Order(orderId: 1, dateCreated: Date(), dateShipped: Date(), CustomerName: "gury", CustomerId: 123, status: "delivered", shippingId: 12378)
 
-print(customer1.display())
+let orderdetail1 = OrderDetails(orderId: 1, productId: 234, productName: "laptop", quantity: 2, unitCost: 234.56, subTotal: 34789)
 
+let shippinginfo1 = ShippingInfo(shippingId: 1, shippingType: "dgh", shippingCost: 123, shippingRegionId: 678)
+
+let shoppingcart1 = ShoppingCart(cartId: 1, productId: 2, quantity: 3, dateAdded: Date())
+
+print(shoppingcart1.display())
+
+print(shippinginfo1.display())
+print(orderdetail1.display())
+
+print(order1.display())
+print(cstmr.display())
 
 print(user1.display())
-
-if (user1.verifyLogin(id: "1",password: "39") == true) {
-    user1.setLoginStatus(loginStatus: "logged in")
-} else {
-    user1.setLoginStatus(loginStatus: "not logged in")
-}
-
-print(user1.display())
+print(admin.display())

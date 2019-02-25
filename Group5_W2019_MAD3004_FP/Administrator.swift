@@ -21,6 +21,9 @@ class Administrator: User {
     }
     
     override func display() -> String {
-        return "null"
+        
+        return super.display() + "Administrator name is :" + self.adminName! + "\nAdministrator Email is :" + self.email!
+        
+        
     }
 }
