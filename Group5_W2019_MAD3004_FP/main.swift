@@ -19,6 +19,9 @@ Customer.login(userId: "3", password: "897")
 
 print("Test Login and Register")
 
+Customer.updateProfile(customer: cstmr, customerName: "batu", address: "fhf", email: "batudfj", creditCardInfo: "459895", shippingInfo: "turkey")
+
+
 print(cstmr.display())
 
 let order1 = Order(orderId: 1, dateCreated: Date(), dateShipped: Date(), CustomerName: "gury", CustomerId: 123, status: "delivered", shippingId: 12378)

@@ -12,7 +12,7 @@ class Customer : User {
     private var email: String?
     private var creditCardInfo: String?
     private var shippingInfo: String?
-    
+
     private static var dictionaryUsers=[String:User]()
     
     init(userId: String, password: String, loginStatus: String, customerName: String, address: String, email: String, creditCardInfo: String, shippingInfo: String) {
@@ -52,6 +52,24 @@ class Customer : User {
                 }
             }
         }
+    }
+    
+    static func updateProfile(customer: Customer, customerName: String, address: String, email: String, creditCardInfo: String, shippingInfo: String) {
+        if (dictionaryUsers.count == 0) {
+            print("No users found.")
+        } else {
+            for (id,_) in dictionaryUsers {
+                if (id == customer.getUserId()) {
+                    customer.customerName = customerName
+                    customer.address = address
+                    customer.email = email
+                    customer.creditCardInfo = creditCardInfo
+                    customer.shippingInfo = shippingInfo
+                    dictionaryUsers.updateValue(customer, forKey: customer.getUserId())
+                }
+            }
+        }
+        
     }
     
     override func display() -> String {

@@ -6,8 +6,7 @@
 import Foundation
 
 class ShoppingCart :IDisplay {
-   
-    
+
     var cartId: Int?
     var productId: Int?
     var quantity: Int
