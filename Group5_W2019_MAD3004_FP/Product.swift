@@ -42,8 +42,12 @@ class Product : Manufacturer {
         super.init(manufId: manufId, manufName: manufName)
     }
     
-    /*override func display() -> String
+    override func display() -> String
     {
-        return "Manufacturer Id : " + self.manufacturerId! + "\n" + self.manufacturerName! + "\n" + self.productId! + "\n" + self.productName! + "\n" + self.price!.currency() + "\n" + self.quantity!.unit()
-    }*/
+        let print1:String = "Manufacturer Id : " + String(self.manufacturerId!) + "\nManufacturer Name : " + self.manufacturerName!
+        let print2:String = "\n Product Id : " + String(self.productId!)
+        let print3:String = "\nProduct Name : " + self.productName! + "\nPrice : " + self.price!.currency() + "\n Quantity : " + self.quantity!.unit()
+        
+        return print1+print2+print3
+    }
 }

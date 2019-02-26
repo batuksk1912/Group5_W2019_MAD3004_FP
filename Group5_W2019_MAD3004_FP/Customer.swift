@@ -26,12 +26,13 @@ class Customer : User {
         self.creditCardInfo = creditCardInfo
         self.shippingInfo = shippingInfo
     }
-    
+    //login check bug
     static func login(userId: String, password: String) {
-        for (id,user) in dictionaryUsers {
-            if (user.getPassword() == password && id == userId) {
+        for (_,user) in dictionaryUsers {
+            if (user.getPassword() == password && user.getUserId() == userId) {
                 //print("You are logged in.")
                 user.setLoginStatus(loginStatus: "loggedin")
+                break
             } else {
                 //print("User name or password not found.")
                 user.setLoginStatus(loginStatus: "notloggedin")
@@ -47,11 +48,11 @@ class Customer : User {
         } else {
             for (id,_) in dictionaryUsers {
                 if (id == user.getUserId()) {
-                    print("User Id : \(id) already exists.")
+                    print("User Id : \(user.getUserId()) already exists.")
                 } else {
                     //print("Register successfully.")
                     dictionaryUsers.updateValue(user, forKey: user.getUserId())
-                    print("User Id : \(id) created successfully.")
+                    print("User Id : \(user.getUserId()) created successfully.")
                 }
             }
         }
@@ -96,13 +97,13 @@ class Customer : User {
                 }
             }
         }
-        
+    
     }
     
     override func display() -> String {
         return super.display() + "Customer Name is : " + self.customerName! + "\nCustomer Address is : "
                 + self.address! + "\nCustomer Email is : " + self.email! + "\nCustomer Credit Card Info is : "
-                + self.creditCardInfo! + "\nCustomer Shipping Info is : " + self.shippingInfo! + "\nCustomer Shopping Cart Info is : " + self.displayShoppingCarts() + "\nCustomer Order Info is : " + self.displayOrders()
+                + self.creditCardInfo! + "\nCustomer Shipping Info is : " + self.shippingInfo! + "\n\nCustomer Shopping Cart Info is : \n" + self.displayShoppingCarts() + "\n\nCustomer Order Info is : \n" + self.displayOrders()
     }
 
 }

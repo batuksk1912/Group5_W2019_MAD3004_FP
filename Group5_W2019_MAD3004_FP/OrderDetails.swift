@@ -34,15 +34,9 @@ class OrderDetails : IDisplay {
     }
     
     func display() -> String {
-        return "null"
+        let print1:String = "\nOrder Id is : " + String(self.orderId!) + "\nProduct Id is : " + String(self.productId!) + "\nProduct Name is : " + self.productName!
+        let print2:String = "\nQuantity is : " + String(self.quantity!.unit()) + "\nPer Unit Cost is : " + String(self.unitCost!) + "\nSub Total is : " + String(self.subTotal.currency())
+        
+        return print1 + print2
     }
-    
-    /*func display() -> String {
-    return "\nOrder Id is : " + String(self.orderId!) +
-           "\nProduct Id is : " + String(self.productId!) +
-           "\nProduct Name is : " + self.productName! +
-           "\nQuantity is : " + String(self.quantity.unit()) +
-           "\nPer Unit Cost is : " + String(self.unitCost!) +
-           "\nSub Total is : " + String(self.SubTotal.currency())
-    }*/
 }
