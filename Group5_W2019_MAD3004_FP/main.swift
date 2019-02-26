@@ -10,8 +10,7 @@ import Foundation
 
 let user1 = User(userId: "1", password: "34", loginStatus: "true")
 
-let admin = Administrator(userId: "2", password: "345", loginStatus: "true", adminName: "gury", email: "gmail")
-
+let admin = Administrator(userId: "2", password: "345", loginStatus: "true", adminName: "gury", email: "gmail", canUpdateCatalog: false)
 let cstmr = Customer(userId: "3", password: "897", loginStatus: "true", customerName: "khushi", address: "kkr", email: "yahoo", creditCardInfo: "12dfs", shippingInfo: "toronto")
 
 Customer.register(user: cstmr)
