@@ -92,29 +92,46 @@ print("-----------------------------------------")
 
 print("Setting Shopping Cart and Order")
 
-print("Fill Shopping Cart with Products and View Details.")
+print("Fill sample Shopping Cart with Products and View Details.")
+
+// Adding product to Cart
 shoppingcart1.addCartItem(products: product1)
-shoppingcart2.addCartItem(products: product2)
+
+// Assign a existing cart to customer1
+print("Set Shopping Carts to User")
+customer1.setShoppingCart(shoppingCart: shoppingcart1)
+
+//create an order
+order1.placeOrder(shippingInfo: shippinginfo1, orderDetails: orderdetail1, status: "Waiting Delivery")
+
+//assign it to customer1
+customer1.setOrders(orders: order1)
+
+//print cart details
 shoppingcart1.viewCartDetails()
+
+//print customer1 details
+print(customer1.display())
+print("---Total Price---")
+//calculates the shipping cost
+orderdetail1.calcPrice(shippingCost: shippinginfo1.getShippingCost())
+print("********************")
+
+
+// Adding product 2 to Cart2
+shoppingcart2.addCartItem(products: product2)
+
 print("-----------------------------------")
 shoppingcart2.viewCartDetails()
 print("**************************************")
 
 print("Set Shopping Carts to User")
-
-customer1.setShoppingCart(shoppingCart: shoppingcart1)
 customer2.setShoppingCart(shoppingCart: shoppingcart2)
 
-order1.placeOrder(shippingInfo: shippinginfo1, orderDetails: orderdetail1, status: "Waiting Delivery")
 order2.placeOrder(shippingInfo: shippinginfo2, orderDetails: orderdetail2, status: "Waiting Delivery")
 
-customer1.setOrders(orders: order1)
 customer2.setOrders(orders: order2)
 
-print(customer1.display())
-print("---Total Price---")
-orderdetail1.calcPrice(shippingCost: shippinginfo1.getShippingCost())
-print("********************")
 print(customer2.display())
 print("---Total Price---")
 orderdetail2.calcPrice(shippingCost: shippinginfo2.getShippingCost())
