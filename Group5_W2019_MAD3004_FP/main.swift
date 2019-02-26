@@ -11,9 +11,20 @@ import Foundation
 let user1 = User(userId: "1", password: "34", loginStatus: "true")
 
 let admin = Administrator(userId: "2", password: "345", loginStatus: "true", adminName: "gury", email: "gmail")
+
 let cstmr = Customer(userId: "3", password: "897", loginStatus: "true", customerName: "khushi", address: "kkr", email: "yahoo", creditCardInfo: "12dfs", shippingInfo: "toronto")
 
+Customer.register(user: cstmr)
+
+Customer.login(userId: "3", password: "897")
+
+print("Test Login and Register")
+
+print(cstmr.display())
+
 let order1 = Order(orderId: 1, dateCreated: Date(), dateShipped: Date(), CustomerName: "gury", CustomerId: 123, status: "delivered", shippingId: 12378)
+
+
 
 let orderdetail1 = OrderDetails(orderId: 1, productId: 234, productName: "laptop", quantity: 2, unitCost: 234.56, subTotal: 34789)
 

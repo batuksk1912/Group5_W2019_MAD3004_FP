@@ -21,12 +21,6 @@ class User : IDisplay {
         return "User id is : " + self.userId! + "\n" + "User Password is : " + self.password! + "\n" + "Login Status is : " + self.loginStatus! + "\n" 
     }
     
-    func verifyLogin() -> Bool {
-        return true
-    }
-    
-    
-
     func verifyLogin(id: String, password: String) -> Bool {
         if (self.userId == id && self.password == password) {
             return true

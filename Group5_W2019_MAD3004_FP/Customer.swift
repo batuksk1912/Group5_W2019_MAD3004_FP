@@ -23,9 +23,22 @@ class Customer : User {
         self.creditCardInfo = creditCardInfo
         self.shippingInfo = shippingInfo
     }
+    
+    static func login(userId: String, password: String) {
+        for (id,user) in dictionaryUsers {
+            if (user.getPassword() == password && id == userId) {
+                //print("You are logged in.")
+                user.setLoginStatus(loginStatus: "loggedin")
+            } else {
+                //print("User name or password not found.")
+                user.setLoginStatus(loginStatus: "notloggedin")
+            }
+        }
+    }
         
     static func register(user: User)
     {
+        //print("Register successfully.")
         dictionaryUsers.updateValue(user, forKey: user.getUserId())
     }
     
