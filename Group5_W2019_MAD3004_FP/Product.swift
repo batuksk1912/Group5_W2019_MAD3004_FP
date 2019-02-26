@@ -34,21 +34,16 @@ class Product : Manufacturer {
         }
     }
     
-    init(manufId:Int, manufName:String,productId:Int,productName:String,price:Float,quantity:Int) {
+    init(manufId:Int, manufName:String, productId:Int, productName:String, price:Float, quantity:Int) {
         self.productId = productId
-        super.init(manufId: manufId, manufName: manufName)
-        
         self.productName = productName
         self.price = price
         self.quantity = quantity
+        super.init(manufId: manufId, manufName: manufName)
     }
     
-    func updateQuantity(newQuantity:Int) {
-        self.quantity = self.quantity! + newQuantity
-    }
-    
-    override func display() -> String
+    /*override func display() -> String
     {
-        return "null"
-    }
+        return "Manufacturer Id : " + self.manufacturerId! + "\n" + self.manufacturerName! + "\n" + self.productId! + "\n" + self.productName! + "\n" + self.price!.currency() + "\n" + self.quantity!.unit()
+    }*/
 }

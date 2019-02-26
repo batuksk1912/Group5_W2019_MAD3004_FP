@@ -7,23 +7,42 @@ import Foundation
 
 class OrderDetails : IDisplay {
    
+    private var orderId: Int?
+    private var productId: Int?
+    private var productName: String?
+    private var quantity: Int?
+    private var unitCost: Float?
+    private var subTotal: Float {
+        var finalSubTotal:Float = 0.0
+        finalSubTotal = finalSubTotal + (Float(quantity!) * unitCost!)
+        return finalSubTotal
+    }
     
-    var orderId: Int?
-    var productId: Int?
-    var productName: String?
-    var quantity: Int
-    var unitCost: Float?
-    var subTotal: Float
+    private var shipping: ShippingInfo?
 
-    init(orderId: Int, productId: Int, productName: String, quantity: Int, unitCost: Float, subTotal: Float) {
+    init(orderId: Int, productId: Int, productName: String, quantity: Int, unitCost: Float) {
         self.orderId = orderId
         self.productId = productId
         self.productName = productName
         self.quantity = quantity
         self.unitCost = unitCost
-        self.subTotal = subTotal
     }
+    
+    func calcPrice() {
+        let finalPrice:Float = subTotal + shipping!.getShippingCost()
+        print("Total price : " + String(finalPrice.currency()))
+    }
+    
     func display() -> String {
-        return "\nOrderId is : " + String(self.orderId!) + "\nProductId is : " + String(self.productId!) + "\nProduct Name is : " + self.productName! + "\nQuantity is : " + String(self.quantity.unit()) + "\nPer Unit Cost is : " + String(self.unitCost!) + "\nSubTotal is : " + String(self.subTotal.currency())
+        return "null"
     }
+    
+    /*func display() -> String {
+    return "\nOrder Id is : " + String(self.orderId!) +
+           "\nProduct Id is : " + String(self.productId!) +
+           "\nProduct Name is : " + self.productName! +
+           "\nQuantity is : " + String(self.quantity.unit()) +
+           "\nPer Unit Cost is : " + String(self.unitCost!) +
+           "\nSub Total is : " + String(self.SubTotal.currency())
+    }*/
 }

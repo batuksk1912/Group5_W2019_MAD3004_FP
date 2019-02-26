@@ -7,11 +7,10 @@ import Foundation
 
 class ShippingInfo : IDisplay {
     
-    
-    var shippingId: Int?
-    var shippingType: String?
-    var shippingCost: Float
-    var shippingRegionId: Int?
+    private var shippingId: Int?
+    private var shippingType: String?
+    private var shippingCost: Float?
+    private var shippingRegionId: Int?
 
     init(shippingId: Int, shippingType: String, shippingCost: Float, shippingRegionId: Int) {
         self.shippingId = shippingId
@@ -20,7 +19,11 @@ class ShippingInfo : IDisplay {
         self.shippingRegionId = shippingRegionId
     }
     
+    func getShippingCost() -> Float {
+        return shippingCost!
+    }
+    
     func display() -> String {
-        return "\nShippin Id is : " + String(self.shippingId!) + "\nShipping Type is : " + self.shippingType! + "\nShipping Cost is : " + String(self.shippingCost.currency()) + "\nShipping Region Id is : " + String(self.shippingRegionId!)
+        return "\nShippin Id is : " + String(self.shippingId!) + "\nShipping Type is : " + self.shippingType! + "\nShipping Cost is : " + String(self.shippingCost!.currency()) + "\nShipping Region Id is : " + String(self.shippingRegionId!)
     }
 }

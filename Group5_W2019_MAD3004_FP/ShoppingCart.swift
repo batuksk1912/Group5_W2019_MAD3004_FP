@@ -7,10 +7,12 @@ import Foundation
 
 class ShoppingCart :IDisplay {
 
-    var cartId: Int?
-    var productId: Int?
-    var quantity: Int
-    var dateAdded: Date = Date()
+    private var cartId: Int?
+    private var productId: Int?
+    private var quantity: Int?
+    private var dateAdded: Date = Date()
+    
+    private lazy var dictProducts=[Int:Product]()
 
     init(cartId: Int, productId: Int, quantity: Int, dateAdded: Date) {
         self.cartId = cartId
@@ -19,8 +21,26 @@ class ShoppingCart :IDisplay {
         self.dateAdded = dateAdded
     }
     
+    func addCartItem(products : Product) {
+        dictProducts.updateValue(products, forKey: products.productId!)
+    }
+    
+    func updateQuantity(newQuantity:Int) {
+        self.quantity = self.quantity! + newQuantity
+    }
+    
+    func viewCartDetails() {
+        for (_,products) in dictProducts {
+            print(products.display())
+        }
+    }
+    
+    func checkOut() {
+        dictProducts.removeAll()
+    }
+    
     func display() -> String {
         let dateDisplay1 = self.dateAdded.getFormattedDate()
-        return "Cart Id is : " + String(self.cartId!) + "\nProduct Id is : " + String(self.productId!) + "\nQuantity is : " + String(self.quantity.unit()) + "\nDate Added is : " + dateDisplay1
+        return "Cart Id is : " + String(self.cartId!) + "\nProduct Id is : " + String(self.productId!) + "\nQuantity is : " + String(self.quantity!.unit()) + "\nDate Added is : " + dateDisplay1
     }
 }

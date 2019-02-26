@@ -15,7 +15,8 @@ class Customer : User {
 
     private static var dictionaryUsers=[String:User]()
 
-    lazy var arrayShoppingCarts: [ShoppingCart] = [ShoppingCart]()
+    private lazy var arrayShoppingCarts: [ShoppingCart] = [ShoppingCart]()
+    private lazy var arrayOrders : [Order] = [Order]()
     
     init(userId: String, password: String, loginStatus: String, customerName: String, address: String, email: String, creditCardInfo: String, shippingInfo: String) {
         super.init(userId: userId, password: password, loginStatus: loginStatus)
@@ -59,11 +60,23 @@ class Customer : User {
     func setShoppingCart(shoppingCart: ShoppingCart) {
         arrayShoppingCarts.append(shoppingCart)
     }
+    
+    func setOrders(orders: Order) {
+        arrayOrders.append(orders)
+    }
 
-    func displayUserCarts() -> String {
+    func displayShoppingCarts() -> String {
         var output = ""
         for cart in arrayShoppingCarts {
             output += cart.display()
+        }
+        return output
+    }
+    
+    func displayOrders() -> String {
+        var output = ""
+        for orders in arrayOrders {
+            output += orders.display()
         }
         return output
     }
@@ -89,8 +102,7 @@ class Customer : User {
     override func display() -> String {
         return super.display() + "Customer Name is : " + self.customerName! + "\nCustomer Address is : "
                 + self.address! + "\nCustomer Email is : " + self.email! + "\nCustomer Credit Card Info is : "
-                + self.creditCardInfo! + "\nCustomer Shipping Info is : " + self.shippingInfo! + self.displayUserCarts()
-
+                + self.creditCardInfo! + "\nCustomer Shipping Info is : " + self.shippingInfo! + "\nCustomer Shopping Cart Info is : " + self.displayShoppingCarts() + "\nCustomer Order Info is : " + self.displayOrders()
     }
 
 }

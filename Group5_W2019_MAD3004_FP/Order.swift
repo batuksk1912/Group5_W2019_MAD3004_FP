@@ -7,14 +7,17 @@ import Foundation
 
 class Order : IDisplay {
     
-    var orderId: Int?
-    var dateCreated:Date = Date()
-    var dateShipped:Date = Date()
-    var CustomerName: String?
-    var CustomerId: Int?
-    var status: String?
-    var shippingId: Int?
-
+    private var orderId: Int?
+    private var dateCreated:Date = Date()
+    private var dateShipped:Date = Date()
+    private var CustomerName: String?
+    private var CustomerId: Int?
+    private var status: String?
+    private var shippingId: Int?
+    
+    private var shippingInfo : ShippingInfo?
+    private var orderDetails : OrderDetails?
+    
     init(orderId: Int, dateCreated: Date, dateShipped: Date, CustomerName: String, CustomerId: Int, status: String, shippingId: Int) {
         self.orderId = orderId
         self.dateCreated = dateCreated
@@ -25,9 +28,13 @@ class Order : IDisplay {
         self.shippingId = shippingId
     }
     
+    func placeOrder() {
+        self.status = "Complete."
+    }
+    
     func display() -> String {
         let dateDisplay = "\nDate Created : " + self.dateCreated.getFormattedDate() + "\nDate Shipped : " + self.dateShipped.getFormattedDate()
-       
-        return  "OrderId is : " + String(self.orderId!) + dateDisplay + "\nCustomer Name is : " + self.CustomerName! + "\nCustomerId is : " + String(self.CustomerId!) + "\nStatus is : " + self.status! + "\nShippingId is : " + String(self.shippingId!)
+        
+        return  "Order Id is : " + String(self.orderId!) + dateDisplay + "\nCustomer Name is : " + self.CustomerName! + "\nCustomer Id is : " + String(self.CustomerId!) + "\nStatus is : " + self.status! + "\nShipping Id is : " + String(self.shippingId!)
     }
 }
