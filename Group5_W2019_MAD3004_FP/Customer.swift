@@ -38,8 +38,20 @@ class Customer : User {
         
     static func register(user: User)
     {
-        //print("Register successfully.")
-        dictionaryUsers.updateValue(user, forKey: user.getUserId())
+        if (dictionaryUsers.count == 0) {
+            dictionaryUsers.updateValue(user, forKey: user.getUserId())
+            print("User Id : \(user.getUserId()) created successfully.")
+        } else {
+            for (id,_) in dictionaryUsers {
+                if (id == user.getUserId()) {
+                    print("User Id : \(id) already exists.")
+                } else {
+                    //print("Register successfully.")
+                    dictionaryUsers.updateValue(user, forKey: user.getUserId())
+                    print("User Id : \(id) created successfully.")
+                }
+            }
+        }
     }
     
     override func display() -> String {
