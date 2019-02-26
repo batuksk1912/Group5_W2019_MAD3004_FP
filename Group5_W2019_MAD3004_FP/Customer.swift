@@ -14,6 +14,8 @@ class Customer : User {
     private var shippingInfo: String?
 
     private static var dictionaryUsers=[String:User]()
+
+    lazy var arrayShoppingCarts: [ShoppingCart] = [ShoppingCart]()
     
     init(userId: String, password: String, loginStatus: String, customerName: String, address: String, email: String, creditCardInfo: String, shippingInfo: String) {
         super.init(userId: userId, password: password, loginStatus: loginStatus)
@@ -53,6 +55,18 @@ class Customer : User {
             }
         }
     }
+
+    func setShoppingCart(shoppingCart: ShoppingCart) {
+        arrayShoppingCarts.append(shoppingCart)
+    }
+
+    func displayUserCarts() -> String {
+        var output = ""
+        for cart in arrayShoppingCarts {
+            output += cart.display()
+        }
+        return output
+    }
     
     static func updateProfile(customer: Customer, customerName: String, address: String, email: String, creditCardInfo: String, shippingInfo: String) {
         if (dictionaryUsers.count == 0) {
@@ -73,7 +87,10 @@ class Customer : User {
     }
     
     override func display() -> String {
-        return super.display() + "Customer Name is : " + self.customerName! + "\nCustomer Address is : " + self.address! + "\nCustomer Email is : " + self.email! + "\nCustomer Credit Card Info is : " + self.creditCardInfo! + "\nCustomer Shipping Info is : " + self.shippingInfo!
+        return super.display() + "Customer Name is : " + self.customerName! + "\nCustomer Address is : "
+                + self.address! + "\nCustomer Email is : " + self.email! + "\nCustomer Credit Card Info is : "
+                + self.creditCardInfo! + "\nCustomer Shipping Info is : " + self.shippingInfo! + self.displayUserCarts()
+
     }
 
 }

@@ -11,9 +11,9 @@ import Foundation
 let user1 = User(userId: "1", password: "34", loginStatus: "true")
 
 let admin = Administrator(userId: "2", password: "345", loginStatus: "true", adminName: "gury", email: "gmail", canUpdateCatalog: false)
-let cstmr = Customer(userId: "3", password: "897", loginStatus: "true", customerName: "khushi", address: "kkr", email: "yahoo", creditCardInfo: "12dfs", shippingInfo: "toronto")
+let cust1 = Customer(userId: "3", password: "897", loginStatus: "true", customerName: "khushi", address: "kkr", email: "yahoo", creditCardInfo: "12dfs", shippingInfo: "toronto")
 
-Customer.register(user: cstmr)
+Customer.register(user: cust1)
 
 Customer.login(userId: "3", password: "897")
 
@@ -32,7 +32,6 @@ let orderdetail1 = OrderDetails(orderId: 1, productId: 234, productName: "laptop
 
 let shippinginfo1 = ShippingInfo(shippingId: 1, shippingType: "dgh", shippingCost: 123, shippingRegionId: 678)
 
-let shoppingcart1 = ShoppingCart(cartId: 1, productId: 2, quantity: 3, dateAdded: Date())
 
 print(shoppingcart1.display())
 
@@ -44,3 +43,4 @@ print(cstmr.display())
 
 print(user1.display())
 print(admin.display())
+*/
