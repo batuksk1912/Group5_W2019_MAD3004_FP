@@ -71,10 +71,17 @@ print("Setting Shopping Cart and Order")
 customer1.setShoppingCart(shoppingCart: shoppingcart1)
 customer2.setShoppingCart(shoppingCart: shoppingcart2)
 
+order1.placeOrder(shippingInfo: shippinginfo1, orderDetails: orderdetail1, status: "Delivered")
+order2.placeOrder(shippingInfo: shippinginfo2, orderDetails: orderdetail2, status: "Delivered")
+
 customer1.setOrders(orders: order1)
 customer2.setOrders(orders: order2)
 
 print(customer1.display())
+print("Total Price")
+//orderdetail1.calcPrice()
 print("********************")
 print(customer2.display())
+print("Total Price")
+//orderdetail2.calcPrice()
 

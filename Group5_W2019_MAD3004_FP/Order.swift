@@ -28,13 +28,15 @@ class Order : IDisplay {
         self.shippingId = shippingId
     }
     
-    func placeOrder() {
-        self.status = "Complete."
+    func placeOrder(shippingInfo: ShippingInfo, orderDetails: OrderDetails, status: String) {
+        self.shippingInfo = shippingInfo
+        self.orderDetails = orderDetails
+        self.status = status
     }
     
     func display() -> String {
         let dateDisplay = "\nDate Created : " + self.dateCreated.getFormattedDate() + "\nDate Shipped : " + self.dateShipped.getFormattedDate()
         
-        return  "Order Id is : " + String(self.orderId!) + dateDisplay + "\nCustomer Name is : " + self.CustomerName! + "\nCustomer Id is : " + String(self.CustomerId!) + "\nStatus is : " + self.status! + "\nShipping Id is : " + String(self.shippingId!)
+        return "Order Id is : " + String(self.orderId!) + dateDisplay + "\nCustomer Name is : " + self.CustomerName! + "\nCustomer Id is : " + String(self.CustomerId!) + "\nStatus is : " + self.status! + "\nShipping Id is : " + String(self.shippingId!) + shippingInfo!.display() + orderDetails!.display()
     }
 }

@@ -19,6 +19,13 @@ class ShippingInfo : IDisplay {
         self.shippingRegionId = shippingRegionId
     }
     
+    func updateShippingInfo(shippingId: Int, shippingType: String, shippingCost: Float, shippingRegionId: Int) {
+        self.shippingId = shippingId
+        self.shippingType = shippingType
+        self.shippingCost = shippingCost
+        self.shippingRegionId = shippingRegionId
+    }
+    
     func getShippingCost() -> Float {
         return shippingCost!
     }
