@@ -18,8 +18,6 @@ class OrderDetails : IDisplay {
         return finalSubTotal
     }
     
-    private var shipping: ShippingInfo?
-
     init(orderId: Int, productId: Int, productName: String, quantity: Int, unitCost: Float) {
         self.orderId = orderId
         self.productId = productId
@@ -28,8 +26,8 @@ class OrderDetails : IDisplay {
         self.unitCost = unitCost
     }
     
-    func calcPrice() {
-        let finalPrice:Float = subTotal + shipping!.getShippingCost()
+    func calcPrice(shippingCost: Float) {
+        let finalPrice:Float = subTotal + shippingCost
         print("Total price : " + String(finalPrice.currency()))
     }
     

@@ -1,6 +1,9 @@
 //
-// Created by Danilo Esser on 2019-02-16.
-// Copyright (c) 2019 Danilo Esser. All rights reserved.
+//  main.swift
+//  Group5_W2019_MAD3004_FP
+//
+//  Created by Baturay Kayatürk on 19.02.2019.
+//  Copyright © 2019 LambtonCollege. All rights reserved.
 //
 
 import Foundation
@@ -26,7 +29,7 @@ class Customer : User {
         self.creditCardInfo = creditCardInfo
         self.shippingInfo = shippingInfo
     }
-    //login check bug
+    
     static func login(userId: String, password: String) {
         for (_,user) in dictionaryUsers {
             if (user.getPassword() == password && user.getUserId() == userId) {

@@ -37,6 +37,6 @@ class Order : IDisplay {
     func display() -> String {
         let dateDisplay = "\nDate Created : " + self.dateCreated.getFormattedDate() + "\nDate Shipped : " + self.dateShipped.getFormattedDate()
         
-        return "Order Id is : " + String(self.orderId!) + dateDisplay + "\nCustomer Name is : " + self.CustomerName! + "\nCustomer Id is : " + String(self.CustomerId!) + "\nStatus is : " + self.status! + "\nShipping Id is : " + String(self.shippingId!) + shippingInfo!.display() + orderDetails!.display()
+        return "Order Id is : " + String(self.orderId!) + dateDisplay + "\nCustomer Name is : " + self.CustomerName! + "\nCustomer Id is : " + String(self.CustomerId!) + "\nStatus is : " + self.status! + "\nShipping Id is : " + String(self.shippingId!) + "\n***Shipping Information***: " + shippingInfo!.display() + "\n****Order Details****: " + orderDetails!.display()
     }
 }
